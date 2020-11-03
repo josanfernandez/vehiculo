@@ -1,4 +1,3 @@
-import {Schema, model } from 'mongoose'
 export class Vehiculo {
     private _matricula : string
     private _consumo : number 
@@ -54,14 +53,3 @@ export class Vehiculo {
     }
     
 }
-
-// Definimos el Schema
-const vehiculoSchema = new Schema({
-    _matricula : String,
-    _arrancado : Boolean,
-    _consumo : Number ,
-    _velocidad : Number,
-})
-
-// La colección de la BD: vehiculos (Plural siempre)
-export const Vehiculos = model ('vehiculos', vehiculoSchema)
