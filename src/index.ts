@@ -1,7 +1,6 @@
-import { Vehiculo, Vehiculos } from './vehiculo/vehiculo'
+import { Vehiculo} from './vehiculo/vehiculo'
 import { menu, menu2 } from './vistas/menuPral'
 import { leerTeclado } from './vistas/entradaTeclado'
-import { connect, disconnect } from "./database/database"
 
 const main = async() => {
     let vehiculo: Array<Vehiculo> = new Array()
@@ -88,20 +87,6 @@ const main = async() => {
                                     let t:number
                                     t=parseInt(await leerTeclado("Introduzca el tiempo en horas que lleva el vehículo a la velocidad actual"))
                                     console.log(`${vehiculo[index].consumido(t)} litros`)
-                                    break
-                                case 5:
-                                    await connect()
-                                    // Crear el doc Schema y objeto Schema a partir del objeto
-                                    // salvarlo
-                                    const dSchema = {
-                                            _matricula : String,
-                                            _arrancado : Boolean,
-                                            _consumo : Number ,
-                                            _velocidad : Number,
-                                    }
-                                    const oSchema = new Vehiculos (dSchema)
-                                    await oSchema.save()
-                                    await disconnect()
                                     break
                                 case 0:
                                     console.log('\n--VOLVIENDO A LA LISTA DE VEHICULOS--')
