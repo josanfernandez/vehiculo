@@ -36,11 +36,11 @@ export class Vehiculo {
         return this._velocidad
     }
 
-    set Velocidad(n:number){
+    set Velocidad(v:number){
         if(this._arrancado==false){
             throw 'ERROR, no puedes cambiar la velocidad a un coche que no está arrancado'
         } else {
-            this._velocidad=n
+            this._velocidad=v
         }
     }
 
